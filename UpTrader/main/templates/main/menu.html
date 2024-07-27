@@ -1,0 +1,21 @@
+<div class="menu">
+    <div class="menu_title">{{menu_name}}</div>
+    <div class="menu_content">
+        <ul class="lvl_1">
+            {% for element1 in lvl_1 %}
+                <li>
+                    <h2>{{ element1 }}</h2>
+                    <ul class="lvl_2">
+                        {% for key, values in lvl_2.items %}
+                        {% if element1 == key %}
+                            {% for title, ref in values %}
+                                <li><a href="{{ ref }}">{{ title }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
